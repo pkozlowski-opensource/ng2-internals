@@ -10,7 +10,7 @@ The ultimate goal is to make it easier for people to contribute fixes and new fe
 
 # TOC
 
-* [Prerequisites](prerequisites.md))
+* [Prerequisites](prerequisites.md)
 * Key concepts
 * Inner working
     * The big picture
