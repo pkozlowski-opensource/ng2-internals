@@ -10,18 +10,21 @@ The ultimate goal is to make it easier for people to contribute fixes and new fe
 
 # TOC
 
+* Prerequisites
 * Key concepts
-* Inner working of AngularJS
+* Inner working
     * The big picture
-    * In-depth
-        * Expressions parsing
+    * Bits and pieces
+        * [Expressions](details/expressions.md): parsing and evaluating
         * Change detection
             * Detecting changes in a given expression
             * Zones: triggering expressions - re-evaluation
         * Dependency Injection
         * Compiler pipeline
-* ATScript
-* Development practices
+        * ATScript
+    * Putting it all together
+* Contributting to Angular2
+    * Development environment
     * Building and testing
     * Performance monitoring
 
