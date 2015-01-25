@@ -131,4 +131,30 @@ Methods available on the `ASTWithSource` interface can be divided into few group
 - structure of a given token
 
 
-# Evaluating expressions
+# Putting it all together: evaluating expressions
+
+A parsed expression can be evaluated by getting or setting its value. Here is a complete example:
+
+```javascript
+import {Parser} from 'change_detection/parser/parser';
+import {Lexer} from 'change_detection/parser/lexer';
+
+var parser = new Parser(new Lexer());
+var parseResult = parser.parseAction('foo.bar', '/some/file.tpl.html at 30:2');
+
+var ctx = {
+    foo: {
+      bar: 'Hi there!'
+    }
+};
+
+//meta-data access
+console.log(parseResult.isAssignable); //true
+
+//getter
+console.log(parseResult.eval(ctx));    //Hi there!
+
+//setter
+parseResult.assign(ctx, 'By There!');
+console.log(ctx.foo.bar);              //By there!
+```
