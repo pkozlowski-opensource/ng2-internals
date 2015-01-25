@@ -59,11 +59,42 @@ Interpolation expressions are nothing more than text fragments mixed with expres
 
 # Parsing and lexing
 
-[Parser](https://github.com/angular/angular/blob/ec5cb3eb66aa343bbc7f67c182c1cc021ce04096/modules/change_detection/src/parser/parser.js#L35-L82)
-- types of nodes
+## Parser
+
+In Angular2 a [Parser](https://github.com/angular/angular/blob/master/modules/change_detection/src/parser/parser.js#2) is a class with the following interface:
+
+ ```javascript
+class Parser {
+
+  parseAction(input:string, location:any):ASTWithSource {
+   ...
+  }
+
+  parseBinding(input:string, location:any):ASTWithSource {
+    ...
+  }
+
+  parseTemplateBindings(input:string, location:any):List<TemplateBinding> {
+    ...
+  }
+
+  parseInterpolation(input:string, location:any):ASTWithSource {
+   ...
+  }
+}
+```
+
+Each method accepts the same set of 2 arguments:
+* `input` - expression (as string) to be parsed
+* `location` - an arbitrary location pointing to a source of an expression being parsed (mostly for debugging purposes)
+
+Most of the methods return an instance of the `ASTWithSource` interface which encapsulates [AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree) of the parsed expression plus methods that can be used to evaluate the expression (see below).
+
+## Lexer
 
 [Lexer](https://github.com/angular/angular/blob/master/modules/change_detection/src/parser/lexer.js)
 - types of tokens
 - structure of a given token
+
 
 # Evaluating expressions
