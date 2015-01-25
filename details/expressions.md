@@ -32,18 +32,38 @@ Angular2 template can contain 4 different types of expressions that are parsed a
 
 ### Action expressions
 
+* no filters (`|`)
+* assignments
+* multi-statement
+* contextual info (event)
+
 ### Binding expressions
+
+* filters (`|`)
+* no assignments
+* no multi-statement
 
 ### Template binding expressions
 
+`ng-repeat: #item in items` is decomposed into pairs of `[keyword, expression]`, where:
+ * `keyword` - a string
+ * `expression` - a binding expression
+
 ### Interpolation expressions
+
+Interpolation expressions are nothing more than text fragments mixed with expression expressions wrapped in `{{expr}}`.
+
+- what is the output of parsing?
 
 ## Comparing with JavaScript expressions
 
 # Parsing and lexing
 
 [Parser](https://github.com/angular/angular/blob/ec5cb3eb66aa343bbc7f67c182c1cc021ce04096/modules/change_detection/src/parser/parser.js#L35-L82)
+- types of nodes
 
 [Lexer](https://github.com/angular/angular/blob/master/modules/change_detection/src/parser/lexer.js)
+- types of tokens
+- structure of a given token
 
-
+# Evaluating expressions
