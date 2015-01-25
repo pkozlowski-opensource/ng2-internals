@@ -88,7 +88,41 @@ Each method accepts the same set of 2 arguments:
 * `input` - expression (as string) to be parsed
 * `location` - an arbitrary location pointing to a source of an expression being parsed (mostly for debugging purposes)
 
-Most of the methods return an instance of the `ASTWithSource` interface which encapsulates [AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree) of the parsed expression plus methods that can be used to evaluate the expression (see below).
+Most of the methods return an instance of the `ASTWithSource` interface. This interface encapsulates a parsed [AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree) as well as exposes additional methods to query and manipulate the expression:
+
+```JavaScript
+class ASTWithSource extends AST {
+
+  eval(context) {
+    ...
+  }
+
+  get isAssignable() {
+    ...
+  }
+
+  assign(context, value) {
+    ...
+  }
+
+  visit(visitor) {
+    ...
+  }
+
+  toString():string {
+    return `${this.source} in ${this.location}`;
+  }
+}
+```
+
+Methods available on the `ASTWithSource` interface can be divided into few groups:
+* metadata:
+    * `isAssignable()` - is this an expression that can be assigned a value (ex.: `foo.bar = baz`)
+    * `toString()` - outputs some debug info (makes use of the previously mentioned `location` argument passed to a parsing method)
+* getter / setter:
+    * `eval(context)` - getter
+    * `assign(context, value)` - setter
+* AST traversal: `visit(visitor)`
 
 ## Lexer
 
