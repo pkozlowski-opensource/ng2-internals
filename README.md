@@ -1,4 +1,9 @@
-# ng2-internals
+# ng-internals 2.0
+
+by Pawel Kozlowski
+
+![Creative Commons License](http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)
+
 
 A set of in-depth, code-level design documents for [Angular 2.0](https://github.com/angular/angular).
 The goal here is to walk readers over main interfaces and how those pleay together and lower the barrier for people to contribute to Angular2.
@@ -20,3 +25,8 @@ The goal here is to walk readers over main interfaces and how those pleay togeth
     * Building and testing
     * Performance monitoring
 
+## Copyright and License
+
+  Copyright 2015 Pawel Kozlowski
+
+  This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License](http://creativecommons.org/licenses/by-nc-nd/3.0/).
