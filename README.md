@@ -6,11 +6,11 @@ by Pawel Kozlowski
 
 
 A set of in-depth, code-level design documents for [Angular 2.0](https://github.com/angular/angular) describing the main interfaces and their interactions.
-The ultimate goal is to make it easier for people to contribute fixes and new features and 3rd party modules to Angular2 ecosystem.
+The ultimate goal is to make it easier for people to contribute fixes and new features and 3rd party modules to Angular2 ecosystem. Hopefully this text will also come handy for more advanced framework users and 3rd party library authors who look for more advanced info on inner workings of Angular2.
 
 # TOC
 
-* Prerequisites
+* [Prerequisites](prerequisites.md))
 * Key concepts
 * Inner working
     * The big picture
@@ -21,7 +21,7 @@ The ultimate goal is to make it easier for people to contribute fixes and new fe
             * Zones: triggering expressions - re-evaluation
         * Dependency Injection
         * Compiler pipeline
-        * ATScript
+        * ATScript and reflection
     * Putting it all together
 * Contributting to Angular2
     * Development environment
